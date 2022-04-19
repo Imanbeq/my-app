@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./components/Header";
-import Task1 from "./components/Square";
+import Task1 from "./components/Task1";
 
 const App = () => {
     return (

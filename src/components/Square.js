@@ -2,7 +2,7 @@ import React from 'react';
 
 const Square = (props) => {
     return (
-        <div>
+        <div style={props.color}>
             <p>Blablalba</p>
         </div>
     );
