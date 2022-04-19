@@ -1,21 +1,11 @@
 import React from "react";
-import Header from "./components/Header/Header";
-import BlogEntries from "./components/BlogEntries/BlogEntries";
-import IntroductionMenu from "./components/IntroductionMenu/IntroductionMenu";
-import Footer from "./components/Footer/Footer";
+import Task1 from "./components/Task1";
 
 const App = () => {
     return (
-        <>
-            <div className="w3-content" style={{maxWidth: "1400px"}}>
-                <Header/>
-                <div className='w3-row'>
-                    <BlogEntries/>
-                    <IntroductionMenu/>
-                </div>
-            </div>
-            <Footer/>
-        </>
+        <div>
+             <Task1/>
+        </div>
     )
 }
 
