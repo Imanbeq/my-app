@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import styles from './Counter.module.css';
 
 const styleButton = {
     backgroundColor: 'black',
@@ -10,7 +11,6 @@ const styleButton = {
 }
 
 const Counter = () => {
-
     const [count, setCount] = useState(0);
 
     const increase = () => {
@@ -23,8 +23,8 @@ const Counter = () => {
 
     return (
         <>
-            <button style={styleButton} onClick={increase}>+++</button>
-            <button style={styleButton} onClick={decrease}>---</button>
+            <button className={styles.btn} onClick={increase}>+++</button>
+            <button className={styles.btn} onClick={decrease}>---</button>
             <h1 className='title'>{count}</h1>
 
         </>
