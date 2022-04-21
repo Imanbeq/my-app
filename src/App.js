@@ -1,10 +1,11 @@
 import React from "react";
-import Task1 from "./components/Task1";
+import Style from "./Style.css"
+import Task2 from "./components/Task2";
 
 const App = () => {
     return (
         <div>
-             <Task1/>
+             <Task2/>
         </div>
     )
 }
