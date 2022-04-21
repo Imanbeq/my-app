@@ -3,3 +3,8 @@
     margin: 50px auto;
     text-align: center;
 }
+
+.title{
+    font-weight: bold;
+    color: darkblue;
+}

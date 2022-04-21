@@ -25,7 +25,7 @@ const Counter = () => {
         <>
             <button style={styleButton} onClick={increase}>+++</button>
             <button style={styleButton} onClick={decrease}>---</button>
-            <h1>{count}</h1>
+            <h1 className='title'>{count}</h1>
 
         </>
     );
