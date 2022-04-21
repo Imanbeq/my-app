@@ -3,16 +3,8 @@ import Style from "./Style.css"
 import Counter from "./components/Counter";
 
 
-const App = () => {
+const App = () => <Counter/>
 
-    return (
-        <>
-            <Counter/>
-        </>
-
-
-    )
-}
 
 export default App;
 
