@@ -1,10 +1,11 @@
 import React from "react";
-import Main from "./pages/Main/Main";
+import './App.css'
+import Post from "./pages/Post/Post";
 
 const App = () => {
     return (
         <>
-            <Main/>
+            <Post/>
         </>
     )
 }
