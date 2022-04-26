@@ -7,9 +7,6 @@ import Main from "./pages/Main/Main";
 const App = () => {
     return (
         <BrowserRouter>
-            <Link to={{
-                pathname: '/post'
-            }}></Link>
             <Routes>
                 <Route path='index' element={<Main/>}/>
                 <Route path='post' element={<Post/>}/>
