@@ -1,5 +1,6 @@
-import React from "react";
-import {Link,useParams} from "react-router-dom";
+import React, {useEffect, useState} from "react";
+import {Link, useParams} from "react-router-dom";
+import {POSTS} from "./constants";
 
 export const Main = () => {
     return <h1 className="title">Main Page</h1>
@@ -22,12 +23,60 @@ export const Contacts = () => {
 }
 
 export const Post = () => {
-    const params = useParams();
-    return <h1 className="title">Post with id {params.id}</h1>
+    const { id } = useParams();
+    const [ post, setPost ] = useState({});
 
+    const getPost = () =>{
+       const post = POSTS.find(item => item.id === parseInt(id) )
+       setPost(post);
+    }
+
+    useEffect(() => {
+        getPost();
+    }, [])
+
+
+    return (
+        <>
+            <h1 className="title">{post.title}</h1>
+            <p>{post.desc}</p>
+        </>
+    )
+
+}
+
+export const Posts = () => {
+    return (
+        <div className="posts">
+            <h1 className="title">All Posts</h1>
+            <ul>
+                {
+                    POSTS.map(item => {
+                        return <li><Link to={`/post/${item.id}`}>{item.title}</Link></li>
+                    })
+                }
+            </ul>
+        </div>
+    )
 }
 
 export const NotFound = () => {
     return <h1 className="title">404 NOT FOUND.<Link to="/">Go to Main</Link></h1>
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

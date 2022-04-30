@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
-import {Main, Products, About, Contacts, Post, NotFound} from "./Pages";
+import {Main, Products, About, Contacts, Post, NotFound, Posts} from "./Pages";
 import "./App.css"
 
 const App = () => {
 
-    const isActive = (object) =>{
+    const isActive = (object) => {
         return object.isActive ? 'active-link' : '';
     }
 
@@ -30,7 +30,7 @@ const App = () => {
                     </li>
 
                     <li>
-                        <NavLink className={isActive}  to="/post/165">Post</NavLink>
+                        <NavLink className={isActive}  to="/posts">Posts</NavLink>
                     </li>
                 </ul>
             </nav>
@@ -39,6 +39,7 @@ const App = () => {
                 <Route path='/products' element={<Products/>}/>
                 <Route path='/about' element={<About/>}/>
                 <Route path='/contacts' element={<Contacts/>}/>
+                <Route path='/posts/' element={<Posts/>}/>
                 <Route path='/post/:id' element={<Post/>}/>
                 <Route path='*' element={<NotFound/>}/>
             </Routes>

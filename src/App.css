@@ -34,7 +34,17 @@ ul{
   text-decoration: underline!important;
 }
 
+.posts{
+  padding: 25px 50px;
+}
+.posts a {
+  font-size: 22px;
+  text-decoration: none;
+}
 
+.posts ul li{
+  list-style-type: none;
+}
 /*.mainFlex{*/
 /*  display: flex;*/
 /*}*/
