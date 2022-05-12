@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
-import {Main, Products, About, Contacts, Post, NotFound, Posts} from "./Pages";
+import {Main, Products, About, Contacts, Post, NotFound, Posts, FAQ, Comments} from "./Pages";
 import "./App.css"
 
 const App = () => {
@@ -30,6 +30,14 @@ const App = () => {
                     </li>
 
                     <li>
+                        <NavLink className={isActive}  to="/faq">FAQ</NavLink>
+                    </li>
+
+                    <li>
+                        <NavLink className={isActive}  to="/comments">Comments</NavLink>
+                    </li>
+
+                    <li>
                         <NavLink className={isActive}  to="/posts">Posts</NavLink>
                     </li>
                 </ul>
@@ -39,6 +47,8 @@ const App = () => {
                 <Route path='/products' element={<Products/>}/>
                 <Route path='/about' element={<About/>}/>
                 <Route path='/contacts' element={<Contacts/>}/>
+                <Route path='/faq' element={<FAQ/>}/>
+                <Route path='/comments' element={<Comments/>}/>
                 <Route path='/posts/' element={<Posts/>}/>
                 <Route path='/post/:id' element={<Post/>}/>
                 <Route path='*' element={<NotFound/>}/>

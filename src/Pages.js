@@ -22,6 +22,16 @@ export const Contacts = () => {
 
 }
 
+export const FAQ = () => {
+    return <h1 className="title">FAQ</h1>
+
+}
+
+export const Comments = () => {
+    return <h1 className="title">Comments</h1>
+
+}
+
 export const Post = () => {
     const { id } = useParams();
     const [ post, setPost ] = useState({});
