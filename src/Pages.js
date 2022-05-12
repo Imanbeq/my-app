@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Link, useParams} from "react-router-dom";
+import {Link, useLocation, useNavigate, useParams} from "react-router-dom";
 import {POSTS} from "./constants";
 
 export const Main = () => {
@@ -13,13 +13,38 @@ export const Products = () => {
 }
 
 export const About = () => {
-    return <h1 className="title">About Us</h1>
+    const navigate = useNavigate();
+    const goForward = () => {
+        navigate('/products')
+    }
 
+    return (
+        <>
+
+            <h1 className="title">About Us</h1>
+            <button onClick={goForward}>Forward</button>
+        </>
+    )
 }
 
 export const Contacts = () => {
-    return <h1 className="title">Contacts</h1>
+    const location = useLocation();
+    const navigate = useNavigate();
 
+    const goBack = () => {
+        navigate(-2);
+    }
+
+
+
+
+
+    return (
+        <>
+            <h1 className="title">Contacts</h1>
+            <button onClick={goBack}>Back</button>
+        </>
+    )
 }
 
 export const FAQ = () => {
@@ -35,10 +60,17 @@ export const Comments = () => {
 export const Post = () => {
     const { id } = useParams();
     const [ post, setPost ] = useState({});
+    const navigate = useNavigate();
 
     const getPost = () =>{
        const post = POSTS.find(item => item.id === parseInt(id) )
-       setPost(post);
+
+        if(!post){
+            navigate('/');
+       } else {
+           setPost(post);
+       }
+
     }
 
     useEffect(() => {
