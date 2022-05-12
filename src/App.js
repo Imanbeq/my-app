@@ -1,57 +1,13 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
-import {Main, Products, About, Contacts, Post, NotFound, Posts, FAQ, Comments} from "./Pages";
+import {Main} from "./Pages";
 import "./App.css"
 
 const App = () => {
-
-    const isActive = (object) => {
-        return object.isActive ? 'active-link' : '';
-    }
-
     return (
         <BrowserRouter>
-            <nav className="nav">
-                <ul>
-                    <li>
-                        <NavLink className={isActive} to="/">Main</NavLink>
-                    </li>
-
-                    <li>
-                        <NavLink className={isActive}  to="/products">Products</NavLink>
-                    </li>
-
-                    <li>
-                        <NavLink className={isActive}  to="/about">About</NavLink>
-                    </li>
-
-                    <li>
-                        <NavLink className={isActive}  to="/contacts">Contacts</NavLink>
-                    </li>
-
-                    <li>
-                        <NavLink className={isActive}  to="/faq">FAQ</NavLink>
-                    </li>
-
-                    <li>
-                        <NavLink className={isActive}  to="/comments">Comments</NavLink>
-                    </li>
-
-                    <li>
-                        <NavLink className={isActive}  to="/posts">Posts</NavLink>
-                    </li>
-                </ul>
-            </nav>
             <Routes>
                 <Route path='/' element={<Main/>}/>
-                <Route path='/products' element={<Products/>}/>
-                <Route path='/about' element={<About/>}/>
-                <Route path='/contacts' element={<Contacts/>}/>
-                <Route path='/faq' element={<FAQ/>}/>
-                <Route path='/comments' element={<Comments/>}/>
-                <Route path='/posts/' element={<Posts/>}/>
-                <Route path='/post/:id' element={<Post/>}/>
-                <Route path='*' element={<NotFound/>}/>
             </Routes>
         </BrowserRouter>
     )
