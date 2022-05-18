@@ -1,49 +1,41 @@
 import React, {useEffect, useState} from 'react';
-import axios from "axios";
+import styles from './Main.module.css'
+import UserDate from "../../components/UserData/UserDate";
 
 const Main = () => {
-    const [data, setData] = useState([]);
+    const [userData, setUserData] = useState([]);
+
+    const getData = () => {
+        const url = 'https://jsonplaceholder.typicode.com/users';
+        fetch(url)
+            .then((response) => response.json())
+            .then(data => {
+                setUserData(data);
+            })
+    }
 
     useEffect(() => {
-
-        axios.get('https://jsonplaceholder.typicode.com/users')
-            .then( res => {
-                setData(res.data);
-            })
-            .catch( err => {
-                console.log(err);
-            })
-
-        /*fetch('https://jsonplaceholder.typicode.com/users')
-            .then((response) => {
-               return response.json();
-            })
-            .then((data) => {
-                console.log(data);
-            })*/
+        return getData();
     }, [])
 
-
-
     return (
-        <>
-            <h1>Метод Fetch</h1>
-            <ul>
-                {
-                    data.map(item => (
-                        <li key={item.id}>{item.name}</li>
-                    ))
-                }
-            </ul> <br/>
+        <div className={styles.container}>
 
-            <ul>
-                {
-                    data.map(item => (
-                        <li key={item.id}>{item.username}</li>
-                    ))
-                }
-            </ul>
-        </>
+             {
+                userData.map((item) => {
+                    return(
+                        <UserDate
+                            name={item.name}
+                            userName={item.username}
+                            email={item.email}
+                            phone={item.phone}
+                            companyName={item.company.name}
+                        />
+                    )
+                })
+            }
+
+        </div>
     );
 };
 
