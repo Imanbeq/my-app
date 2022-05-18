@@ -15,12 +15,11 @@ const Main = () => {
     }
 
     useEffect(() => {
-        return getData();
+         return getData();
     }, [])
 
     return (
         <div className={styles.container}>
-
              {
                 userData.map((item) => {
                     return(
