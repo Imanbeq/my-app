@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Main from "./pages/Main/Main";
-// import AlbumCards from "./pages/AlbumCards/AlbumCards";
 import TestFetch from "./pages/TestFetch/TestFetch";
+// import AlbumCards from "./pages/AlbumCards/AlbumCards";
 import "./App.css";
 
 const App = () => {
