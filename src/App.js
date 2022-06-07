@@ -1,19 +1,40 @@
-import React from "react";
-import { BrowserRouter, Routes, Route} from "react-router-dom";
-import Main from "./pages/Main/Main";
-import TestFetch from "./pages/TestFetch/TestFetch";
-// import AlbumCards from "./pages/AlbumCards/AlbumCards";
-import "./App.css";
+import React, {useEffect, useState} from "react";
 
 const App = () => {
+    const [count, setCount] = useState(0);
+    const [age, setAge] = useState(0);
+
+    useEffect(() => {
+        console.log('я буду меняться при каждом рендеринге');
+    })
+
+    useEffect(() => {
+        console.log('я запущусь только один раз');
+    }, [])
+
+    useEffect(() => {
+        console.log('я буду запускаться при изменении age')
+    }, [age])
+
+    const clickInc = () => {
+        setCount(count + 1);
+    }
+
+    const clickDec = () => {
+        setAge(age-1);
+    }
+
+
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path='/' element={<Main/>}/>
-                <Route path='/test-fetch' element={<TestFetch/>}/>
-                {/*<Route path='/' element={<AlbumCards/>}/>*/}
-            </Routes>
-        </BrowserRouter>
+       <>
+           <div style={{textAlign:"center"}}>
+               <h1>Hook useEffect</h1>
+               <button onClick={clickInc}>+++</button>
+               <button onClick={clickDec}>---</button>
+               <h2>{count}</h2>
+               <h2>{age}</h2>
+           </div>
+       </>
     )
 }
 
